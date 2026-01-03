@@ -1,0 +1,271 @@
+.filterBar {
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filterBarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 16px;
+}
+
+.filterInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.itemCount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.filterToggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.filterToggleButton::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.filterToggleButton:hover::after,
+.filterToggleButton.active::after {
+  transform: scaleX(1);
+}
+
+.filterToggleButton.active {
+  color: #000;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.directionChevron {
+  display: none;
+}
+
+.sortDropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  text-transform: uppercase; 
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.sortButton:hover {
+  background-color: #f3f4f6;
+}
+
+.sortMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 20;
+  background-color: white;
+  min-width: 240px;
+  margin-top: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 0;
+  text-align: left;
+}
+
+.sortItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.sortItem:hover {
+  background-color: #f3f4f6;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000;
+  margin-right: 8px;
+}
+
+.selectedItem {
+  font-weight: 600;
+}
+
+.separator {
+  width: 1px;
+  height: 20px;
+  background-color: #d1d5db;
+  display: none;
+}
+
+.middleSeparator {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .directionChevron {
+    display: block;
+  }
+  
+  .filterToggleButton {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .filterBarContent {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  
+  .filterInfo {
+    width: auto;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  
+  .itemCount {
+    display: none;
+  }
+  
+  .filterToggleButton {
+    font-size: 14px;
+    padding: 8px 0;
+    width: auto;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .filterToggleButton::after {
+    left: 0;
+    right: 0;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .middleSeparator {
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #d1d5db;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .sortDropdown {
+    align-self: center;
+    margin-left: auto;
+  }
+
+  .sortButton {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .directionChevron {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .filterBarContent {
+    gap: 12px;
+    position: relative;
+  }
+
+  .filterInfo {
+    gap: 12px;
+  }
+
+  .filterToggleButton {
+    font-size: 14px;
+    gap: 0;
+  }
+
+  .filterToggleButton .chevron {
+    display: none;
+  }
+
+  .filterToggleButton::before {
+    content: 'FILTER';
+  }
+
+  .filterToggleButton span {
+    display: none;
+  }
+
+  .middleSeparator {
+    height: 16px;
+  }
+
+  .sortButton {
+    font-size: 14px;
+    gap: 4px;
+  }
+}

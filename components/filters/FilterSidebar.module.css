@@ -1,0 +1,89 @@
+.filterSidebar {
+  background: white;
+  border-radius: 8px;
+}
+
+.filterSection {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+
+.filterSection:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sectionContent {
+  padding-top: 12px;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+
+.radioInput {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.filterText {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .filterSidebar {
+    margin-bottom: 24px;
+  }
+}
